@@ -12,7 +12,7 @@ class App extends Component {
       isClicked: false
     };
 
-    // this.delete
+  
   
 
   inputSub = (event) => {
@@ -29,12 +29,10 @@ class App extends Component {
 
   }
 
-  handleDelete = () => {
-    this.setState({
-      if( { item }) {
-
-      }
-    })
+  handleDelete = index => { 
+    let newItems = [...this.state.items]; 
+      newItems.splice(index, 1);
+      this.setState({items: newItems});
   }
 
 render() {
@@ -46,7 +44,7 @@ render() {
        <input value={this.state.input} onChange={this.inputSub} />
         <button onClick={this.clicked}>Flip</button>
       </form>
-      <TodoList items={this.state.items}/>
+      <TodoList items={this.state.items} handleDelete={this.handleDelete}/>
       </header>
     </div>
   )

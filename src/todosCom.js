@@ -8,7 +8,7 @@ function TodoList(props) {
       {props.items.map((item, index) => {
       return (
         <div>
-        <li index={index}>{item}   <button onClick={ () => this.handleDelete({ item })} > X </button></li>
+        <li index={index}>{item}   <button onClick={ () => props.handleDelete(index)} > X </button></li>
         
         </div>)
       })}
